@@ -11,7 +11,15 @@ export default class ProfileController {
 
     const user = await showProfile.execute({ userId });
 
-    return response.json(user);
+    const userWithoutPassword = {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt,
+    };
+
+    return response.json(userWithoutPassword);
   }
 
   public async update(request: Request, response: Response): Promise<Response> {
