@@ -7,7 +7,7 @@ import ListProviderMonthAvailabilityService from '../ListProviderMonthAvailabili
 let listProviderMonthAvailability: ListProviderMonthAvailabilityService;
 let fakeAppointmentsRepository: FakeAppointmentsRepository;
 
-describe('ListProviders', () => {
+describe('ListProviderMonthAvailabilityService', () => {
   beforeEach(() => {
     fakeAppointmentsRepository = new FakeAppointmentsRepository();
     listProviderMonthAvailability = new ListProviderMonthAvailabilityService(
@@ -76,7 +76,7 @@ describe('ListProviders', () => {
     });
 
     const availability = await listProviderMonthAvailability.execute({
-      userId: 'user',
+      providerId: 'user',
       year: 2020,
       month: 5,
     });
