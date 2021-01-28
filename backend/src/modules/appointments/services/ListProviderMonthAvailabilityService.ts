@@ -3,7 +3,7 @@ import { getDaysInMonth, getDate } from 'date-fns';
 import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
 
 interface IRequest {
-  userId: string;
+  providerId: string;
   month: number;
   year: number;
 }
@@ -20,9 +20,13 @@ export default class ListProviderMonthAvailabilityService {
     private appointmentsRepository: IAppointmentsRepository,
   ) { }
 
-  public async execute({ userId, month, year }: IRequest): Promise<IResponse> {
+  public async execute({
+    providerId,
+    month,
+    year,
+  }: IRequest): Promise<IResponse> {
     const appointments = await this.appointmentsRepository.findAllInMonthFromProvider(
-      { providerId: userId, month, year },
+      { providerId, month, year },
     );
 
     const numberOfDaysInMonth = getDaysInMonth(new Date(year, month - 1));
