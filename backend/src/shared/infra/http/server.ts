@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import '@shared/infra/typeorm';
 import 'reflect-metadata';
 import '@shared/container';
