@@ -62,7 +62,7 @@ export const AvatarInput = styled.div`
     border-radius: 50%;
   }
 
-  button {
+  label {
     position: absolute;
     width: 48px;
     height: 48px;
@@ -78,10 +78,16 @@ export const AvatarInput = styled.div`
     align-items: center;
     justify-content: center;
 
+    cursor: pointer;
+
     > svg {
       width: 20px;
       height: 20px;
       color: #312e38;
+    }
+
+    input {
+      display: none;
     }
 
     &:hover {
