@@ -1,15 +1,9 @@
-import React, { useCallback, useRef } from 'react';
-
-import { FiLock } from 'react-icons/fi';
-
-import { useHistory, useLocation } from 'react-router-dom';
-
-import { Form } from '@unform/web';
-
-import { FormHandles } from '@unform/core';
-
 import * as Yup from 'yup';
-
+import React, { useCallback, useRef } from 'react';
+import { FiLock } from 'react-icons/fi';
+import { useHistory, useLocation } from 'react-router-dom';
+import { Form } from '@unform/web';
+import { FormHandles } from '@unform/core';
 import { useToast } from '../../hooks/Toast';
 
 import getValidationErrors from '../../utils/getValidationErrors';
@@ -17,7 +11,6 @@ import getValidationErrors from '../../utils/getValidationErrors';
 import logo from '../../assets/logo.svg';
 
 import Input from '../../components/Input';
-
 import Button from '../../components/Button';
 
 import { Container, Content, Background } from './styles';

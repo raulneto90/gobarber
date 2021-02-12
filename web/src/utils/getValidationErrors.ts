@@ -1,7 +1,7 @@
 import { ValidationError } from 'yup';
 
 interface Errors {
-  [key: string]: string;
+  [key: string]: string | undefined;
 }
 
 export default function getValidationErrors(error: ValidationError): Errors {
