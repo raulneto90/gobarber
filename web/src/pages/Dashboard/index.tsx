@@ -4,7 +4,8 @@ import ptBR from 'date-fns/locale/pt-BR';
 
 import DayPicker, { DayModifiers } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
-import { FiClock, FiPower } from 'react-icons/fi';
+import { FiClock, FiPower, FiUser } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import {
   Container,
   Header,
@@ -137,10 +138,16 @@ const Dashboard: React.FC = () => {
           <img src={logoImg} alt="Gobarber" />
 
           <Profile>
-            <img src={user.avatarUrl} alt={user.name} />
+            {user.avatarUrl ? (
+              <img src={user.avatarUrl} alt={user.name} />
+            ) : (
+              <FiUser />
+            )}
             <div>
               <span>Bem vindo,</span>
-              <strong>{user.name}</strong>
+              <Link to="/profile">
+                <strong>{user.name}</strong>
+              </Link>
             </div>
           </Profile>
 

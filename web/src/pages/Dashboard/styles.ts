@@ -44,6 +44,15 @@ export const Profile = styled.div`
     border-radius: 50%;
   }
 
+  > svg {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    color: #312e38;
+    background: #fff;
+    border: 1px solid #312e38;
+  }
+
   div {
     display: flex;
     flex-direction: column;
@@ -54,8 +63,15 @@ export const Profile = styled.div`
       color: #f4ede8;
     }
 
-    strong {
+    a {
       color: #ff9000;
+      text-decoration: none;
+
+      transition: 0.2s;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 `;
